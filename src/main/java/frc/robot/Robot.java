@@ -103,13 +103,10 @@ public class Robot extends TimedRobot {
      * "autonomousPeriodic()" and "teleopPeriodic()"
      */
     private void defaultControl() { 
-        double power = (-m_flightStick.getRawAxis(3) + 4.0) / 5.0;
-        System.out.print("power: ");
-        System.out.println(power);
         // Main robot movement controls
         double robotForward = m_flightStick.getRawAxis(0); // X axis is rotation
         double robotRotate  = m_flightStick.getRawAxis(1); // Y axis is throttle
-        m_drive.arcadeDrive(-(power * robotForward), (power * robotRotate));
+        m_drive.arcadeDrive(robotForward, robotRotate);
 
         // Dogtail movement controls
         boolean dogtailForward = m_flightStick.getRawButton(5);
