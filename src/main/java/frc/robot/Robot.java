@@ -159,11 +159,11 @@ public class Robot extends TimedRobot {
         activateSolenoid(clawEject, clawRetract, m_solenoidClawEject);
 
         // Robot lifting controls
-        // boolean robotUp   = m_flightStick.getRawButton(12);
-        // boolean frontDown = m_flightStick.getRawButton(8);
-        // boolean backDown  = m_flightStick.getRawButton(10);
-        // activateSolenoid(robotUp, frontDown, m_solenoidFrontRaise);
-        // activateSolenoid(robotUp, backDown, m_solenoidBackRaise);
+        boolean robotUp   = m_flightStick.getRawButton(12);
+        boolean frontDown = m_flightStick.getRawButton(8);
+        boolean backDown  = m_flightStick.getRawButton(10);
+        activateSolenoid(robotUp, frontDown, m_solenoidFrontRaise);
+        activateSolenoid(robotUp, backDown, m_solenoidBackRaise);
 
     }
 
