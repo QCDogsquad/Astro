@@ -98,7 +98,7 @@ public class Robot extends TimedRobot {
         else if (extend)
             solenoid.set(DoubleSolenoid.Value.kForward);
         else if (retract)
-            m_solenoidClawPos.set(DoubleSolenoid.Value.kReverse);
+            solenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
     /**
@@ -164,7 +164,6 @@ public class Robot extends TimedRobot {
         boolean backDown  = m_flightStick.getRawButton(10);
         activateSolenoid(robotUp, frontDown, m_solenoidFrontRaise);
         activateSolenoid(robotUp, backDown, m_solenoidBackRaise);
-
     }
 
     /**
