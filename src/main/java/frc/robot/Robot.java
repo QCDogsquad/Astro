@@ -97,7 +97,7 @@ public class Robot extends TimedRobot {
             solenoid.set(DoubleSolenoid.Value.kOff);
         else if (extend)
             solenoid.set(DoubleSolenoid.Value.kForward);
-        else if (retract)
+        else if (retract) 
             solenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
