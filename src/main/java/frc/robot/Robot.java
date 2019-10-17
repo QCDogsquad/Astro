@@ -1,4 +1,3 @@
-
 package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
@@ -49,8 +48,8 @@ public class Robot extends TimedRobot {
     Compressor m_compressor = new Compressor(0);
 
     // Solenoids for manipulating the claw
-    DoubleSolenoid m_solenoidClawPos   = new DoubleSolenoid(0, 1);
-    DoubleSolenoid m_solenoidClawEject = new DoubleSolenoid(2, 3);
+    DoubleSolenoid m_solenoidClawPos  = new DoubleSolenoid(0, 1);
+    DoubleSolenoid m_solenoidClawGrab = new DoubleSolenoid(2, 3);
 
     // Solenoids for raising the robot
     DoubleSolenoid m_solenoidFrontRaise = new DoubleSolenoid(4, 5);
@@ -155,9 +154,9 @@ public class Robot extends TimedRobot {
 
         // This controls whether the claw is ejected or not
         // The claw is folded in order fit within the required space
-        boolean clawEject   = m_flightStick.getRawButton(4);
-        boolean clawRetract = m_flightStick.getRawButton(6);
-        activateSolenoid(clawEject, clawRetract, m_solenoidClawEject);
+        boolean clawOpen  = m_flightStick.getRawButton(4); // Opening the claw grabs the hatch panel
+        boolean clawClose = m_flightStick.getRawButton(6); // Closing the claw releases the hatch panel
+        activateSolenoid(clawOpen, clawClose, m_solenoidClawGrab);
 
         // Robot lifting controls
         boolean robotUp   = m_flightStick.getRawButton(12);
