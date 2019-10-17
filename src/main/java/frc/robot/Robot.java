@@ -13,9 +13,6 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import jaci.pathfinder.PathFinder;
-
-
 public class Robot extends TimedRobot {
     // Constants for the autonomous period
     private final String c_autoDefault = "Default";
